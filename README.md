@@ -13,7 +13,7 @@ This project is an image processing system that accepts a CSV file containing im
 
 ## Project Structure
 
-```plaintext
+
 image_processing_system/
 │
 ├── app.py                  # Main Flask application
@@ -23,32 +23,32 @@ image_processing_system/
 └── requirements.txt        # Project dependencies
 
 
-Requirements
+**Requirements**
 
-    Python 3.8+
-    MySQL Server
-    Redis (for Celery task queue)
+    - Python 3.8+
+    - MySQL Server
+    - Redis (for Celery task queue)
 
 
-1. Install Dependencies
+1. **Install Dependencies**
     - pip install -r requirements.txt
 
-2. Configure MySQL Database
+2. **Configure MySQL Database**
     - Create a MySQL database:
         - CREATE DATABASE image_processing_db;
     - Update config.py with your MySQL credentials:
         - SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://user:password@localhost/image_processing_db'
 
-3. Set Up Database Migrations
+3. **Set Up Database Migrations**
     - flask db init
     - flask db migrate -m "Initial migration."
     - flask db upgrade
 
-4. Start the Celery Worker
-- Ensure Redis is running, then start the Celery worker:
-    - celery -A tasks.celery worker --loglevel=info
+4. **Start the Celery Worker**
+    - Ensure Redis is running, then start the Celery worker:
+        - celery -A tasks.celery worker --loglevel=info
 
-5. Run the Flask Application
+5. **Run the Flask Application**
     - flask run
 
 
